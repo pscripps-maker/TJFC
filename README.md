@@ -8,3 +8,6 @@ Data is stored locally in the browser. Export backups regularly. Importing a bac
 
 
 Latest update: the live screen includes a Penalties button for a separate penalty shootout tracker with first-kicker selection, player takers, scored/missed/saved outcomes and side-by-side shootout scores. The main clock button now toggles between Start match, Pause match and Continue.
+
+
+Latest update: penalty shootout data is retained in saved match records and refreshed when the archived match changes; match summaries/reports and exports include penalty scores. Player time played now includes a percentage of total match duration. The Squad tab supports editable Home/Away/Third (and additional) kit definitions with a separate shirt number per player for each kit. Team kit colours are available in the live-match kit-colour dropdown.
