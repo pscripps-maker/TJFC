@@ -1,24 +1,27 @@
-# Touchline Tracker — Custom Formations Update
+# Touchline Tracker — Complete website package
 
-This update adds reusable custom formations and improves the visual formation editor.
+This ZIP contains the files needed to host Touchline Tracker as a static website / Progressive Web App (PWA):
 
-## New functionality
-- Create, save, edit and delete custom formations for 5-a-side through 11-a-side.
-- Formation options are filtered to the selected players-per-side count. The goalkeeper is added automatically; outfield row counts must total one fewer than the number of players per side.
-- Examples for 7-a-side include `1-2-3`, `1-2-2-1`, and `2-1-2-1`.
-- In the visual pitch, drag a player to an empty position to move them without swapping another player. On touch screens, tap a player then tap an empty slot.
-- Drag a substitute onto an occupied shirt to make a substitution.
-- The visual formation button now uses a pitch icon.
-- Custom formations are stored in app settings and included in regular app backups.
+- `index.html` — the app and its interface (includes the app JavaScript)
+- `manifest.webmanifest` — PWA name, launch settings and icons
+- `sw.js` — service worker for offline caching and updates
+- `icon-192.png`, `icon-512.png`, `icon.svg` — app icons
+- `app.js` and `inline-check.js` — supporting copies of the app script for reference/validation; the current `index.html` runs its embedded script
 
-## Install
-1. Export a full backup from the current app before replacing files.
-2. Extract this ZIP and upload its contents to the existing GitHub Pages repository, preserving the file structure.
-3. Refresh/reopen the PWA so the updated service worker can install the update.
+## Publish on GitHub Pages
 
-Saved data remains in browser local storage. Do not clear site storage as part of installation.
+1. Back up your Touchline Tracker data from inside the app before updating.
+2. Extract this ZIP.
+3. Upload **all the files in this ZIP** to the root of your existing GitHub Pages repository, keeping the filenames unchanged. `index.html` should be at the published root, not buried inside another folder.
+4. Commit the changes and wait for GitHub Pages to publish.
+5. Open the site using its HTTPS GitHub Pages URL, then refresh/reopen the app. HTTPS is required for service-worker/PWA installation; opening `index.html` directly as a local file will not enable offline PWA features.
 
+## Visual formation controls
 
-Latest update: restored touch-based player swapping in the visual pitch; added per-match unavailable player controls in the starting-lineup dialog; added an Injured / Fit again event with a red plus indicator; and added editable age-group player-count defaults in Settings with a Team-page age group selector that applies the matching players-per-side format when loading a team. Age-group counts are editable defaults and should be checked against current competition rules.
+- Tap a player, then tap another player to swap positions.
+- Tap a substitute and then the player to replace, or tap the player first and then the substitute.
+- Save formation and Save starting lineup save the changes and close their popups.
 
-Latest update: the Injured / Fit again event is now included in Settings > Event button settings, where its label and button order can be edited like the other events. Toggling it for an injured player records the return-to-fit event and removes the red injured indicator.
+## Data safety
+
+The app stores team and match data in the browser's local storage on each device. Updating the website should not require clearing browser storage. **Do not clear site data/storage** as part of the update. Export a backup regularly, and especially before replacing the hosted files.
