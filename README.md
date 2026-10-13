@@ -1,21 +1,24 @@
-# Touchline Tracker PWA
+# Touchline Tracker — Custom Formations Update
 
-Offline-first football match tracker. Upload the contents of this folder to the root of a GitHub Pages repository, enable Pages over HTTPS, open the published URL in Chrome on Android, and use the browser menu to install/add to home screen.
+This update adds reusable custom formations and improves the visual formation editor.
 
-This update adds team-first statistics filtering, season/tournament filtering within a team, combined all-team statistics grouped by team, green active-period and red ended-period buttons, and an Import backup button beside Export backup on History / stats.
+## New functionality
+- Create, save, edit and delete custom formations for 5-a-side through 11-a-side.
+- Formation options are filtered to the selected players-per-side count. The goalkeeper is added automatically; outfield row counts must total one fewer than the number of players per side.
+- Examples for 7-a-side include `1-2-3`, `1-2-2-1`, and `2-1-2-1`.
+- In the visual pitch, drag a player to an empty position to move them without swapping another player. On touch screens, tap a player then tap an empty slot.
+- Drag a substitute onto an occupied shirt to make a substitution.
+- The visual formation button now uses a pitch icon.
+- Custom formations are stored in app settings and included in regular app backups.
 
-Data is stored locally in the browser. Export backups regularly. Importing a backup replaces data currently stored on the device.
+## Install
+1. Export a full backup from the current app before replacing files.
+2. Extract this ZIP and upload its contents to the existing GitHub Pages repository, preserving the file structure.
+3. Refresh/reopen the PWA so the updated service worker can install the update.
+
+Saved data remains in browser local storage. Do not clear site storage as part of installation.
 
 
-Latest update: the live screen includes a Penalties button for a separate penalty shootout tracker with first-kicker selection, player takers, scored/missed/saved outcomes and side-by-side shootout scores. The main clock button now toggles between Start match, Pause match and Continue.
+Latest update: restored touch-based player swapping in the visual pitch; added per-match unavailable player controls in the starting-lineup dialog; added an Injured / Fit again event with a red plus indicator; and added editable age-group player-count defaults in Settings with a Team-page age group selector that applies the matching players-per-side format when loading a team. Age-group counts are editable defaults and should be checked against current competition rules.
 
-
-Latest update: penalty shootout data is retained in saved match records and refreshed when the archived match changes; match summaries/reports and exports include penalty scores. Player time played now includes a percentage of total match duration. The Team tab supports creating and loading named teams. Each saved team stores its player list, kit colours and per-player shirt numbers together. Loading a team on the live match screen loads its players and kit colours. Full and selective team backups include saved team kits and player shirt numbers. Match reports list each recorded penalty taker and whether the kick was scored, saved or missed.
-
-
-## Latest fixes (October 2026)
-- The live-match “Your kit colour” selector now contains only colours configured for the currently loaded team's kits. Generic and other-team colours are no longer added to this selector.
-- The Statistics team filter also filters the Saved matches list, and includes saved teams even when they have no recorded matches yet.
-- Current-match statistics indicate when the open match belongs to a different team than the selected filter.
-- Changing Home/Away venue selects that team's matching Home/Away kit colour when available.
-- Service-worker cache version bumped so the updated app files can be refreshed.
+Latest update: the Injured / Fit again event is now included in Settings > Event button settings, where its label and button order can be edited like the other events. Toggling it for an injured player records the return-to-fit event and removes the red injured indicator.
