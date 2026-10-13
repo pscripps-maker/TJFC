@@ -17,3 +17,6 @@ This update adds reusable custom formations and improves the visual formation ed
 3. Refresh/reopen the PWA so the updated service worker can install the update.
 
 Saved data remains in browser local storage. Do not clear site storage as part of installation.
+
+
+Latest update: restored touch-based player swapping in the visual pitch; added per-match unavailable player controls in the starting-lineup dialog; added an Injured / Fit again event with a red plus indicator; and added editable age-group player-count defaults in Settings with a Team-page age group selector that applies the matching players-per-side format when loading a team. Age-group counts are editable defaults and should be checked against current competition rules.
