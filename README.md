@@ -20,3 +20,5 @@ Saved data remains in browser local storage. Do not clear site storage as part o
 
 
 Latest update: restored touch-based player swapping in the visual pitch; added per-match unavailable player controls in the starting-lineup dialog; added an Injured / Fit again event with a red plus indicator; and added editable age-group player-count defaults in Settings with a Team-page age group selector that applies the matching players-per-side format when loading a team. Age-group counts are editable defaults and should be checked against current competition rules.
+
+Latest update: the Injured / Fit again event is now included in Settings > Event button settings, where its label and button order can be edited like the other events. Toggling it for an injured player records the return-to-fit event and removes the red injured indicator.
